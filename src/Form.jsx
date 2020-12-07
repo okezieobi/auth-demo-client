@@ -104,7 +104,7 @@ export default function SignInSide() {
       <CssBaseline />
       <Grid item xs={12} md={4} component={Paper}>
         <div className={classes.paper}>
-          <Typography color="primary" variant="h6">
+          <Typography color="primary" variant="h3">
             Let&apos;s Talk
           </Typography>
           <Typography color="primary">
