@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7b53f96c-fd1c-4509-90cf-01b54fd7b082/deploy-status)](https://app.netlify.com/sites/react-form-demo/deploys)
 
 # React form demo
 https://react-form-demo.netlify.app/
