@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Auth from './Auth';
+import Form from './Form';
 
 function App() {
   return (
     <Switch>
       <Route path="/">
-        <Auth />
+        <Form />
       </Route>
     </Switch>
   );

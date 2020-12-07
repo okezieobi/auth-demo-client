@@ -3,13 +3,20 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputBase from '@material-ui/core/InputBase';
+import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LocationIcon from '@material-ui/icons/LocationOn';
+import PhoneIcon from '@material-ui/icons/Phone';
+import MessageIcon from '@material-ui/icons/Mail';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { purple } from '@material-ui/core/colors';
-import BG_1 from './images/bg_1.svg';
+import BG_1 from './images/BG_1.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'contain',
     backgroundPosition: 'center',
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(6),
+      padding: theme.spacing(0, 6),
     },
   },
   paper: {
@@ -51,6 +58,42 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     borderRadius: '10px',
   },
+  backdrop: {
+    height: '100%',
+  },
+  backdropContainer: {
+    width: '100%',
+  },
+  social: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    width: '100%',
+  },
+  contactInfo: {
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+    flexFlow: 'column',
+  },
+  icons: {
+    fontSize: '8vh',
+  },
+  twitter: {
+    color: 'aqua',
+  },
+  address: {
+    marginBottom: theme.spacing(2),
+  },
+  addressItem: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  addressIcon: {
+    marginRight: theme.spacing(1),
+  },
+  addressContainer: {
+    padding: theme.spacing(1),
+  },
 }));
 
 export default function SignInSide() {
@@ -59,22 +102,20 @@ export default function SignInSide() {
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item xs={12} sm={8} md={5} component={Paper}>
+      <Grid item xs={12} md={4} component={Paper}>
         <div className={classes.paper}>
-          <Typography color="primary" variant="h4">
+          <Typography color="primary" variant="h6">
             Let&apos;s Talk
           </Typography>
-          <Typography color="primary" component="h1" variant="h6">
+          <Typography color="primary">
             To request a quote or want to meetup for coffee.
             Contact us directly or fill out the form and we will
             get back to you promptly
           </Typography>
           <form className={classes.form} noValidate>
             <InputLabel>
-              <Typography color="primary" variant="h6">Full Name</Typography>
+              <Typography color="primary">Full Name</Typography>
               <InputBase
-                variant="outlined"
-                margin="normal"
                 required
                 fullWidth
                 id="name"
@@ -85,10 +126,8 @@ export default function SignInSide() {
               />
             </InputLabel>
             <InputLabel>
-              <Typography color="primary" variant="h6">Your Email</Typography>
+              <Typography color="primary">Your Email</Typography>
               <InputBase
-                variant="outlined"
-                margin="normal"
                 required
                 fullWidth
                 name="email"
@@ -98,17 +137,15 @@ export default function SignInSide() {
               />
             </InputLabel>
             <InputLabel>
-              <Typography color="primary" variant="h6">Message</Typography>
+              <Typography color="primary">Message</Typography>
               <InputBase
-                variant="outlined"
-                margin="normal"
                 required
                 fullWidth
                 id="message"
                 name="message"
                 autoComplete="message"
                 multiline
-                rows={4}
+                rows={8}
                 className={classes.input}
               />
             </InputLabel>
@@ -125,10 +162,44 @@ export default function SignInSide() {
           </form>
         </div>
       </Grid>
-      <Grid item xs={false} sm={4} md={7} />
-      <Grid item>
-        <Grid container>
+      <Grid className={classes.backdropContainer} xs={12} md={8} item>
+        <Grid className={classes.backdrop} alignContent="space-between" container>
           <Grid item xs={12} />
+          <Grid item xs={12} />
+          <Grid item xs={12} />
+          <Grid className={classes.contactInfo} item xs={12}>
+            <div className={classes.addressContainer}>
+              <div className={`${classes.address} ${classes.addressItem}`}>
+                <LocationIcon color="primary" className={classes.addressIcon} />
+                <Typography display="block" color="primary" variant="h6">
+                  151 New Park Ave, Hatford, CT 06106 United States
+                </Typography>
+              </div>
+              <div className={classes.addressItem}>
+                <PhoneIcon color="primary" className={classes.addressIcon} />
+                <Typography color="primary" variant="h6">
+                  +1 (203) 302 9545
+                </Typography>
+              </div>
+              <div className={classes.addressItem}>
+                <MessageIcon color="primary" className={classes.addressIcon} />
+                <Typography color="primary" variant="h6">
+                  contactus@nvritasoft.com
+                </Typography>
+              </div>
+            </div>
+          </Grid>
+          <Grid className={classes.social} item xs={12}>
+            <IconButton color="primary">
+              <FacebookIcon className={classes.icons} />
+            </IconButton>
+            <IconButton>
+              <TwitterIcon className={`${classes.icons} ${classes.twitter}`} />
+            </IconButton>
+            <IconButton color="secondary">
+              <InstagramIcon className={classes.icons} />
+            </IconButton>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
